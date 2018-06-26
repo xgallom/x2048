@@ -11,6 +11,7 @@ set(FILES
     "Entry.h" "Entry.cpp"
     "GameBoard.h" "GameBoard.cpp"
 	"Direction.h" "Direction.cpp"
+	"GameBoardIterator.h" "GameBoardIterator.cpp"
     )
 
 add_executable(${PROJECT_NAME} "main.cpp" ${FILES})
