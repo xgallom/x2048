@@ -12,7 +12,7 @@ void GameBoard::reset()
 			m_gameBoard[y][x].clear();
 }
 
-const Entry &GameBoard::entryAt(Position position) const
+const Entry &GameBoard::constEntryAt(Position position) const
 {
 	return m_gameBoard[position.y][position.x];
 }

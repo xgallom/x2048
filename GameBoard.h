@@ -12,7 +12,7 @@ public:
 
 	void reset();
 
-	const Entry &entryAt(Position position) const;
+	const Entry &constEntryAt(Position position) const;
 	Entry &entryAt(Position position);
 
 	bool isFull() const;
