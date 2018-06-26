@@ -7,6 +7,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 project(x2048)
 
 set(FILES
+    "Position.h"
     "Entry.h" "Entry.cpp"
     )
 
