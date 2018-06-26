@@ -9,6 +9,7 @@ project(x2048)
 set(FILES
     "Position.h"
     "Entry.h" "Entry.cpp"
+    "GameBoard.h" "GameBoard.cpp"
     )
 
 add_executable(${PROJECT_NAME} "main.cpp" ${FILES})
