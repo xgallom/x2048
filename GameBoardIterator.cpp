@@ -1,5 +1,23 @@
 #include "GameBoardIterator.h"
 
+static const Position &deltaPositionFromDirection(Direction direction)
+{
+	static Position
+			Right( 1,  0),
+			Down ( 0,  1),
+			Left (-1,  0),
+			Up   ( 0, -1),
+			Invalid;
+
+	switch(direction.value()) {
+	case Direction::Right: return Right;
+	case Direction::Down : return Down;
+	case Direction::Left : return Left;
+	case Direction::Up   : return Up;
+	default: return Invalid;
+	}
+}
+
 GameBoardIterator::GameBoardIterator(GameBoard &gameBoard, Position initialPosition, Direction direction) :
 	m_gameBoard(gameBoard),
 	m_currentPosition(initialPosition),
@@ -31,15 +49,19 @@ const Entry &GameBoardIterator::operator *() const
 	return m_gameBoard.constEntryAt(m_currentPosition);
 }
 
-bool GameBoardIterator::advance()
+Entry *GameBoardIterator::operator ->()
 {
-	if(isValid()) {
-		// TODO
+	return &m_gameBoard.entryAt(m_currentPosition);
+}
 
-		return true;
-	}
+const Entry *GameBoardIterator::operator ->() const
+{
+	return &m_gameBoard.constEntryAt(m_currentPosition);
+}
 
-	return false;
+void GameBoardIterator::advance()
+{
+	m_currentPosition += deltaPositionFromDirection(m_direction);
 }
 
 bool GameBoardIterator::isValid() const

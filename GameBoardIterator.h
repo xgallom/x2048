@@ -19,7 +19,10 @@ public:
 	Entry &operator *();
 	const Entry &operator *() const;
 
-	bool advance();
+	Entry *operator ->();
+	const Entry *operator ->() const;
+
+	void advance();
 	bool isValid() const;
 };
 
