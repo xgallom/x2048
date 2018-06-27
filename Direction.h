@@ -17,7 +17,7 @@ private:
 
 public:
 	Direction() = default;
-	explicit Direction(Enum direction);
+	Direction(Enum direction);
 
 	Direction(const Direction &) = default;
 	Direction(Direction &&) = default;
