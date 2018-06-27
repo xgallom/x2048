@@ -26,6 +26,7 @@ public:
 
 	GameState::Enum gameState() const;
 
+	void init();
 	void control();
 };
 

@@ -12,6 +12,11 @@ GameState::Enum GameController::gameState() const
 	return m_gameState;
 }
 
+void GameController::init()
+{
+	m_gameState = GameState::Menu;
+}
+
 void GameController::control()
 {
 }
