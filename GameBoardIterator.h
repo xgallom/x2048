@@ -13,6 +13,8 @@ public:
 	GameBoardIterator(GameBoard &gameBoard, Position initialPosition, Direction direction);
 
 	Position currentPosition() const;
+	int x() const;
+	int y() const;
 
 	Entry &operator *();
 	const Entry &operator *() const;

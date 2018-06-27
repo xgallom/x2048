@@ -11,6 +11,16 @@ Position GameBoardIterator::currentPosition() const
 	return m_currentPosition;
 }
 
+int GameBoardIterator::x() const
+{
+	return currentPosition().x;
+}
+
+int GameBoardIterator::y() const
+{
+	return currentPosition().y;
+}
+
 Entry &GameBoardIterator::operator *()
 {
 	return m_gameBoard.entryAt(m_currentPosition);
