@@ -1,32 +1,15 @@
-#include <ncurses.h>
-
-#include "GameBoard.h"
-#include "GameBoardIterator.h"
+#include "Game.h"
 
 int main()
 {
-	if(!initscr()) {
-		printf("Error initializing ncurses!\n");
+	Game game;
+
+	if(!game.init())
 		return 1;
-	}
 
-	GameBoard gameBoard;
+	game.run();
 
-	for(GameBoardIterator row(gameBoard, Position(0, 0), Direction::Down); row.isValid(); row.advance()) {
-		for(GameBoardIterator i(gameBoard, row.currentPosition(), Direction::Right); i.isValid(); i.advance()) {
-			i->value = i.x() + i.y();
-
-			printw("%d ", i->value);
-		}
-
-		printw("\n");
-	}
-
-	refresh();
-
-	getch();
-
-	endwin();
+	game.deinit();
 
 	return 0;
 }
