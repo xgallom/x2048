@@ -9,9 +9,9 @@ set(CMAKE_CXX_FLAGS --std=c++17)
 project(x2048)
 
 set(FILES
-    "Position.h"
-    "Entry.h" "Entry.cpp"
-    "GameBoard.h" "GameBoard.cpp"
+	"Position.h"
+	"Entry.h" "Entry.cpp"
+	"GameBoard.h" "GameBoard.cpp"
 	"Direction.h" "Direction.cpp"
 	"GameBoardIterator.h" "GameBoardIterator.cpp"
     )
