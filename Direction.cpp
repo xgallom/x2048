@@ -13,6 +13,11 @@ Direction &Direction::operator =(Direction::Enum e)
 	return *this;
 }
 
+Direction::Enum Direction::value() const
+{
+	return m_direction;
+}
+
 bool Direction::isValid() const
 {
 	return isValid(m_direction);
