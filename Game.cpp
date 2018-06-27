@@ -6,14 +6,24 @@ Game::Game() :
 	m_gameViewer(*this)
 {}
 
-GameBoard &Game::gameBoard()
+bool Game::init()
 {
-	return m_gameBoard;
+	if(!m_gameViewer.init())
+		return false;
+
+	m_gameController.init();
+
+	return true;
+}
+
+void Game::deinit()
+{
+	m_gameViewer.deinit();
 }
 
 void Game::run()
 {
-	while(true) {
+	while(gameState() != GameState::Exiting) {
 		m_gameController.control();
 
 		m_gameViewer.repaint();
@@ -23,5 +33,10 @@ void Game::run()
 GameState::Enum Game::gameState() const
 {
 	return m_gameController.gameState();
+}
+
+GameBoard &Game::gameBoard()
+{
+	return m_gameBoard;
 }
 

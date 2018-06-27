@@ -15,11 +15,13 @@ private:
 public:
 	Game();
 
-	GameBoard &gameBoard();
-
+	bool init();
+	void deinit();
 	void run();
 
 	GameState::Enum gameState() const;
+
+	GameBoard &gameBoard();
 };
 
 #endif
